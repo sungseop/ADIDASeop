@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+
+<div layout:fragment="content">
+
+    <div class="main2">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/-2LdDotlWwo?controls=0&amp;playlist=PRNkc8iO28E&loop=1&autoplay=1&mute=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="main1">
+        <a>
+            <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/koKR/Images/OUTLET_Masthead-D_tcm215-922137.jpg">
+            <div class="main1a">
+                <h2>ADIDAS ONLINE OUTLET</h2>
+                <p>이제는 온라인에서도 아디다스 아웃렛을 만나보세요</p>
+            </div>
+        </a>
+    </div><br><br>
+
+    <input type="hidden" name="searchQuery" th:value="${itemSearchDto.searchQuery}">
+
+    <div class="main3">
+        <h1>TREND NOW</h1>
+        <div class="row">
+            <th:block th:each="trendItem, status: ${trendItem.getContent()}">
+                <div class="col-md-2 margin">
+                    <div class="card" style="width: 18rem;">
+                        <a th:href="'/item/' +${trendItem.id}" class="text-dark">
+                            <img th:src="${trendItem.imgUrl}" class="card-img-top" th:alt="${trendItem.itemNm}">
+                            <div class="card-body">
+                                <p>[[${trendItem.itemNm}]]</p>
+                                <p>[[${trendItem.price}]]원</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+
+    <div class="main3">
+        <h1>BEST OF ADIDAS</h1>
+        <div class="row">
+            <th:block th:each="bestItem, status: ${bestItem.getContent()}">
+                <div class="col-lg-2 col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <a th:href="'/item/' +${bestItem.id}" class="text-dark">
+                            <img th:src="${bestItem.imgUrl}" class="card-img-top" th:alt="${bestItem.itemNm}">
+                            <div class="card-body">
+                                <p>[[${bestItem.itemNm}]]</p>
+                                <p>[[${bestItem.price}]]원</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+
+</div>
+</html>

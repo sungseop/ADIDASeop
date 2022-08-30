@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<th:block layout:fragment="css">
+    <style>
+        .insertBoard {
+            margin-top: 50px;
+        }
+    </style>
+</th:block>
+<div layout:fragment="content" class="insertBoard">
+    <form th:action="@{/board/insertBoard}" method="post">
+        <table th:align="center">
+            <tr>
+                <td th:text="제목" width="80"></td>
+            </tr>
+            <tr>
+                <td><input name="title" type="text" size="50"></td>
+            </tr>
+            <tr>
+                <td th:text="작성자"></td>
+            </tr>
+            <tr>
+                <td><input name="name" type="text"></td>
+            </tr>
+            <tr>
+                <td th:text="내용"></td>
+            </tr>
+            <tr>
+                <td><textarea name="content" cols="53" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="게시글 등록">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</html>

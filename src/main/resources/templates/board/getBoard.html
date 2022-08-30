@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/layout1}">
+
+<div layout:fragment="content" class="getBoard">
+    <form th:action="@{updateBoard}" method="post">
+        <input name="seq" type="hidden" th:value="${board.seq}">
+        <table class="table table-bordered">
+            <tr>
+                <td th:text="제목" width="80"></td>
+                <td th:text="${board.title}"></td>
+            </tr>
+            <tr>
+                <td th:text="작성자"></td>
+                <td th:text="${board.name}"></td>
+            </tr>
+            <tr>
+                <td th:text="작성일"></td>
+                <td th:text="${#dates.format(board.createDate, 'yyyy-MM-dd')}"></td>
+            </tr>
+            <tr style="height: 200px;">
+                <td th:text="내용"></td>
+                <td th:text="${board.content}"></td>
+            </tr>
+        </table>
+    </form>
+    <div>
+        <h4>답변:</h4><hr>
+        <tr th:each="answer, state : ${answerList}">
+            <td th:text="${answer.aContent}"></td><hr>
+        </tr>
+    </div>
+    <div class="card my-4" sec:authorize="hasRole('ROLE_ADMIN')">
+        <h5 class="card-header">Leave a Comment</h5>
+        <div class="card-body">
+            <form name="aComment" th:action="@{/board/insertAnswer}" method="post">
+                <div class="form-group">
+                    <input type="hidden" th:name="aBoardSeq" th:value="${board.seq}">
+                    <textarea name="aContent" class="form-control" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <a th:href="@{/board/insertBoard}"><button style="border: 1px solid;">질문하기</button></a>
+    <a th:href="@{/board/getBoardList}"><button style="border: 1px solid;">글 목록</button></a>&nbsp;&nbsp;&nbsp;
+    <a sec:authorize="hasRole('ROLE_ADMIN')"
+       th:href="@{/board/deleteBoard(seq=${board.seq})}"><button style="border: 1px solid;">글 삭제</button></a>&nbsp;&nbsp;&nbsp;
+</div>
+</html>

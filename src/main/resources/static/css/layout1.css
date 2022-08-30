@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap');
+html {
+    position: relative;
+    min-height: 100%;
+    min-width: 100%
+}
+body {
+    min-height: 100%;
+    position: relative;
+    z-index: 2;
+}
+a {
+    color: black;
+}
+.header {
+    z-index: 1;
+    position:relative;
+}
+.header-sub {
+    background-color: black;
+    color: white;
+    font-size: 11px;
+    text-align: center;
+    font-weight: 600;
+    padding: 6px;
+}
+.header-sub a {
+    padding: 10px 150px;
+}
+nav {
+    height: 80px;
+}
+nav img {
+    width: 60px;
+    height: 60px;
+    margin-left: 40px;
+    margin-top: 16px;
+    display: inline-block;
+    float: left;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    width: 500px;
+    margin: 0 auto;
+}
+
+nav li {
+    font-family: 'Prompt', sans-serif;
+    float: left;
+    padding: 0 20px;
+    padding-top: 40px;
+}
+
+nav li a {
+    display: block;
+    text-align: center;
+}
+
+nav li ul {
+    display: none;
+    border: 0px;
+    position: absolute;
+    background: white;
+    padding: 0;
+    width: 35px;
+}
+
+nav li:hover ul {
+    display: block;
+}
+
+nav li li {
+    display:block;
+    float: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav li ul a {
+    display: block;
+    margin: 0px;
+    text-align: left;
+}
+.header2 {
+    display: inline-block;
+    float: right;
+}
+.header2 p {
+    display: inline-block;
+    font-size: 14px;
+}
+
+.header2 form {
+    display: inline-block;
+    float: right;
+}
+.main1 {
+    position: relative;
+    color: black;
+}
+.main1a {
+    position: absolute;
+    top: 40%;
+    left: 11%;
+}
+.main1 img {
+    width: 100%;
+    height: auto;
+}
+
+.main1a h2 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+.main1a p {
+    font-size: 18px;
+}
+.main2 {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.main2 iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.main3 {
+    padding-bottom: 60px;
+    width: 1800px;
+    position: relative;
+    margin: 0 auto;
+}
+.list{
+    padding-top: 100px;
+    padding-bottom: 60px;
+    width: 1800px;
+    position: relative;
+    margin: 0 auto;
+}
+.main3 h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.card{
+    margin-bottom: 10px;
+}
+.row a:hover{
+    border:black 1px solid;
+    text-decoration: none;
+    color: black;
+}
+.footer {
+    clear: both;
+}
+.footer1 {
+    background-color: rgb(233,236,239);
+    margin-top: 50px;
+    text-align: center;
+}
+.footer1-1 {
+    display: inline-block;
+    padding: 50px;
+    text-align: left;
+    font-size: 14px;
+}
+.footer2 {
+    text-align: center;
+    font-size: 14px;
+    padding: 20px;
+}
+.footer3 {
+    text-align: center;
+    background-color: rgb(54,55,56);
+    font-size: 14px;
+    padding: 20px;
+    color: rgb(200,203,204);
+}
+.loginForm {
+    padding-top: 70px;
+    text-align: center;
+}
+.itemForm {
+    padding-top: 70px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+.itemMng {
+    padding-top: 70px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+.memberForm {
+    padding-top: 70px;
+    text-align: center;
+}
+.itemDtlImg {
+    margin-bottom: 4px;
+    width: 50%;
+    height: 50%;
+    float: left;
+}
+.itemDtlImgBox {
+    margin-bottom: 2px;
+}
+.itemDtlBox1 {
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-color: rgb(236, 239, 241);
+    width: 78%;
+    height: 100%;
+    float: left;
+    background-color: white;
+}
+.itemDtlBox2 {
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-color: rgb(236, 239, 241);
+    width: 22%;
+    height: 100%;
+    float: right;
+}
+.itemInf {
+    width: 800px;
+    margin: 0 auto;
+    clear: both;
+    padding-top: 40px;
+}
+.itemInf h5 {
+    padding: 20px;
+    border-left: 4px solid black;
+    border-bottom: 2px solid rgb(233, 236, 239);
+    font-weight: 800;
+    font-size: 17px;
+}
+.itemInf p {
+    font-size: 16px;
+    padding: 20px;
+}
+.boardList {
+    padding-top: 70px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+.getBoard {
+    padding-top: 70px;
+    padding-left: 300px;
+    padding-right: 300px;
+}

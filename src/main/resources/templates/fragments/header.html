@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<div th:fragment="header" class="header0">
+    <div class="header-sub">
+        <a>가입 / 로그인 / 배송지 입력안내</a>
+        <a>회원 가입 10% 할인 및 생일 쿠폰 / 상시 할인 쿠폰 재발급 관련 안내</a>
+        <a>토요 배송 제한 지역 안내</a>
+    </div>
+    <div class="header">
+        <nav>
+            <a href="/">
+                <img class="logo" src="https://www.adidas.co.kr/glass/react/456da4a/assets/img/icon-adidas-logo.svg" href="/">
+            </a>
+            <div class="dropmenu">
+                <ul>
+                    <li><a href="/item/men">MEN</a>
+                        <ul>
+                            <li><a href="/item/men/shoes">신발</a></li>
+                            <li><a href="/item/men/clothing">의류</a></li>
+                            <li><a href="/item/men/supplies">용품</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/item/women">WOMEN</a>
+                        <ul>
+                            <li><a href="/item/women/shoes">신발</a></li>
+                            <li><a href="/item/women/clothing">의류</a></li>
+                            <li><a href="/item/women/supplies">용품</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/item/kids">KIDS</a>
+                        <ul>
+                            <li><a href="/item/kids/shoes">신발</a></li>
+                            <li><a href="/item/kids/clothing">의류</a></li>
+                            <li><a href="/item/kids/supplies">용품</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/item/sports">SPORTS</a>
+                        <ul>
+                            <li><a href="/item/sports/running">러닝</a></li>
+                            <li><a href="/item/sports/football">축구</a></li>
+                            <li><a href="/item/sports/golf">골프</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/board/getBoardList">QNA</a></li>
+                </ul>
+            </div>
+            <div class="header2">
+                <div class="header2menu">
+                    <p sec:authorize="hasAnyAuthority('ROLE_ADMIN')"><a href="/admin/item/new">상품 등록</a></p>
+                    <p sec:authorize="hasAnyAuthority('ROLE_ADMIN')"><a href="/admin/items">상품 관리</a></p>
+                    <p sec:authorize="hasAnyAuthority('ROLE_ADMIN')"><a href="/admin/orders">주문 관리</a></p>
+                    <p sec:authorize="isAuthenticated()"><a href="/cart">장바구니</a></p>
+                    <p sec:authorize="isAuthenticated()"><a href="/orders">구매이력</a></p>
+                    <p sec:authorize="isAnonymous()"><a href="/members/login">로그인</a></p>
+                    <p sec:authorize="isAuthenticated()"><a href="/members/logout">로그아웃</a></p>
+                </div>
+
+                <form th:action="@{/item/search}" method="get">
+                    <input name="searchQuery" type="search" placeholder="Search" aria-label="Search">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+</div>
+</html>
